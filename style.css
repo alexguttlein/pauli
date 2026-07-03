@@ -7,7 +7,11 @@ body{
     overflow:hidden;
 }
 
-#terminal{ width:80%; max-width:900px; font-size:24px; line-height:1.6; } 
+#terminal{
+    width:min(90%, 900px);
+    font-size:clamp(15px, 2.5vw, 24px);
+    line-height:1.6;
+}
 
 #cursor{ animation:blink 1s infinite; } 
 @keyframes blink{ 50%{ opacity:0; } } 
@@ -64,17 +68,16 @@ body{
 #pantallaTerminal{ transition:1.5s; } 
 #pantallaTerminal.ocultar{ opacity:0; } 
 
-#heart{ font-size:80px; opacity:0; margin-bottom:40px; flex-shrink:0; } 
+#heart{
+    font-size:clamp(60px, 15vw, 90px);
+}
 @keyframes latido{ 0%{ transform:scale(1); } 50%{ transform:scale(1.2); } 100%{ transform:scale(1); } } 
 
 #mensaje{
-    width:80%;
-    max-width:700px;
-    color:white;
-    text-align:center;
-    font-size:28px;
-    line-height:1.8;
-    opacity:0;
+    width:min(90%,700px);
+    font-size:clamp(18px,5vw,28px);
+    line-height:1.6;
+    padding:0 10px;
 }
 .visible{ opacity:1; transition:1s; } 
 
@@ -85,15 +88,15 @@ body{
 
 #botones{
     position:relative;
-    width:500px;
-    height:140px;
-    margin:40px auto;
+    width:min(90vw,500px);
+    height:170px;
+    margin:30px auto;
 }
 
 button{
     position:absolute;
-    padding:15px 35px;
-    font-size:22px;
+    padding:14px 28px;
+    font-size:clamp(18px,4vw,22px);
     border:none;
     border-radius:12px;
     cursor:pointer;
@@ -125,7 +128,7 @@ button{
     height:40px;
     margin-bottom:20px;
     color:#ffd166;
-    font-size:22px;
+    font-size:clamp(16px,4vw,22px);
     font-weight:bold;
     text-align:center;
     transition:opacity .4s;
@@ -161,12 +164,35 @@ button{
 
 #tituloFinal{
     margin-top:30px;
-    font-size:22px;
+    font-size:clamp(22px,6vw,38px);
 }
 
 #textoFinal{
-    font-size:20px;
-    width:70%;
+    font-size:clamp(18px,4.5vw,22px);
+    width:min(90%,700px);
     text-align:center;
-    line-height:1.8;
+    line-height:1.7;
+}
+
+@media (max-width: 600px){
+
+    #pregunta{
+        width:90%;
+        margin:auto;
+    }
+
+    #botones{
+        width:90vw;
+        height:220px;
+    }
+
+    #btnSi{
+        left:20px;
+        top:80px;
+    }
+
+    #btnNo{
+        left:190px;
+        top:80px;
+    }
 }
