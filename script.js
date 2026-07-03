@@ -16,18 +16,18 @@ const contenedorBotones = document.getElementById("botones");
 const cartel = document.getElementById("cartel");
 const posicionesNo = [
     {
-        left: 280,
-        top: 40,
+        left: 65,
+        top: 25,
         frase: "¿Estás segura? 🤨"
     },
     {
-        left: 60,
-        top: 10,
+        left: 10,
+        top: 60,
         frase: "Mmm... creo que ese botón no funciona 😜"
     },
     {
-        left: 320,
-        top: 90,
+        left: 70,
+        top: 5,
         frase: "Yo probaría el otro ❤️"
     }
 ];
@@ -260,8 +260,8 @@ function moverBotonNo(){
     }
 
     const posicion = posicionesNo[indice];
-    btnNo.style.left = posicion.left + "px";
-    btnNo.style.top = posicion.top + "px";
+    btnNo.style.left = posicion.left + "%";
+    btnNo.style.top = posicion.top + "%";
     cartel.innerHTML = posicion.frase;
 }
 
@@ -305,7 +305,7 @@ hermosa historia que estamos por vivir.`,
     await esperar(800);
 
     fechaFinal.innerHTML =
-        "03/07/2026 ❤️";
+        "❤️ Pauli y Alex - 03/07/2026 ❤️";
 }
 
 async function escribirEnElemento(elemento, texto, velocidad){
